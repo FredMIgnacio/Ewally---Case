@@ -1,3 +1,2 @@
-import routes from './routes';
-
-module.exports = function(app, db) {  routes(app, db);};
+const bill = require('./bill');
+module.exports = function(app) {bill(app);};
