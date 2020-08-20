@@ -22,8 +22,10 @@ function validator(linhaDigitavel) {
         const billBarcode = linhaDigitavel.substring(0, 4).concat(linhaDigitavel.substring(32), linhaDigitavel.substring(4, 9), linhaDigitavel.substring(10, 20), linhaDigitavel.substring(21, 31));
         
         //criar os blocos a partir da linha digitavel
-        const blocks = [],
-            let validBlocks = 0;
+
+
+        let validBlocks = 0;
+
         blocks.forEach(block => {
             if (!digitValidator.validate10(block, block[block.length - 1])) {
                 return {
@@ -51,6 +53,11 @@ function validator(linhaDigitavel) {
     const billBarcode = linhaDigitavel.substring(0, 11).concat(linhaDigitavel.substring(12, 23), linhaDigitavel.substring(24, 35), linhaDigitavel.substring(36, 47));
     
     //criar os blocos a partir do billBarcode
+    const blocks = [],
+    blocks[0] = billBarcode.substring(0, 13);
+    blocks[1] = billBarcode.substring(13, 25);
+    blocks[2] = billBarcode.substring(25, 37);
+    blocks[3] = billBarcode.substring(37);
     
     //verifica se é modulo 10 ou 11
     const blocks = [],
